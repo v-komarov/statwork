@@ -6,5 +6,7 @@ service cdr2cassandra
     port = 11111
     wait = no
     user = root
-    server = /srv/cdr2cassandra.py
+    server = /bib/python3.6
+    server_args = /srv/cdr2cassandra.py
 }
+

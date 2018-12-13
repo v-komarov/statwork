@@ -1,5 +1,3 @@
-#!/bin/python3.4
-
 import datetime
 import time
 import sys
@@ -9,7 +7,7 @@ from cassandra.cluster import Cluster
 import conf
 
 
-cluster = Cluster(co.ca_host,co.ca_port)
+cluster = Cluster(conf.ca_host,conf.ca_port)
 session = cluster.connect()
 session.set_keyspace('pdrdata')
 
