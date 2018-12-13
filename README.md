@@ -2,7 +2,8 @@
 
 Зависимости:
 
-[cassandra-driver] https://pypi.org/project/cassandra-driver/
+[cassandra-driver](https://pypi.org/project/cassandra-driver/)
 
+Компоненты:
 
 - statwork.ddl - скрипт создания структуры хранения cassandra
