@@ -1,0 +1,10 @@
+service cdr2cassandra
+{
+    disable = no
+    type = UNLISTED
+    socket_type = stream
+    port = 11111
+    wait = no
+    user = root
+    server = /srv/cdr2cassandra.py
+}
