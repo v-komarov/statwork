@@ -1,4 +1,4 @@
-CREATE KEYSPACE statwork IF NOT EXISTS WITH replication = {'class':'SimpleStrategy', 'replication_factor':2};
+CREATE KEYSPACE IF NOT EXISTS statwork WITH replication = {'class':'SimpleStrategy', 'replication_factor':2};
 
 CREATE TABLE IF NOT EXISTS phone_log (
 id uuid PRIMARY KEY,
