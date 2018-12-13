@@ -3,3 +3,7 @@
 """Адрес cassandra кластера"""
 ca_host = []
 ca_port = 22
+
+"""Префикс"""
+pref = "KRS-AVAYA"
+
