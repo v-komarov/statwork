@@ -22,7 +22,7 @@ def logpar(log):
     data["call_c"] = log[2]    
     mode = log[3]
     log.reverse()
-    data["duration"] = int(log[5],10)
+    data["duration"] = int(log[4],10)
 
     data["in_out"] = True if len(data["call_a"]) > 4 and len(data["call_c"]) == 4 else False
     data["inner"] = True if len(data["call_a"]) == 4 and len(data["call_c"]) == 4 else False
