@@ -1,0 +1,12 @@
+service cdr2cassandra
+{
+    disable = no
+    type = UNLISTED
+    socket_type = stream
+    port = 11111
+    wait = no
+    user = root
+    server = /usr/bin/python3.6
+    server_args = /srv/cdr2cassandra_asterisk.py
+}
+
