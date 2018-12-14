@@ -10,6 +10,7 @@ cluster = Cluster(conf.ca_host,conf.ca_port)
 session = cluster.connect()
 session.set_keyspace(conf.ca_keyspace)
 
+h4 = datetime.timedelta(hours=4)
 
 
 def logpar(log):
@@ -38,7 +39,7 @@ while True:
     if line == "":
         break
     else:
-        dt = datetime.datetime.now()
+        dt = datetime.datetime.now() + h4
         day = dt.day
         month = dt.month
         year = dt.year
