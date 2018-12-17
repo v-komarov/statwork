@@ -43,7 +43,7 @@ def logpar(log):
 
     return data
 
-consumer = KafkaConsumer(conf.ka_queue,bootstrap_servers=conf.ka_host, auto_offset_reset='latest')
+consumer = KafkaConsumer(conf.ka_queue2,bootstrap_servers=conf.ka_host, auto_offset_reset='latest')
 
 for m in consumer:
 

@@ -15,6 +15,6 @@ pref2 = "KRS-ASTERISK"
 """kafka"""
 ka_host = ["10.6.0.88:9092",]
 ka_queue = "avaya"
-ka_queue = "asterisk"
+ka_queue2 = "asterisk"
 
 
