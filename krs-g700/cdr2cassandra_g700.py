@@ -1,5 +1,5 @@
-#!/usr/bin/python
 #coding:utf-8
+import sys
 import datetime
 from cassandra.cluster import Cluster
 
@@ -15,24 +15,33 @@ session.set_keyspace(conf.ca_keyspace)
 h4 = datetime.timedelta(hours=4)
 
 
-def logpar(log):
+
+def isInt(s):
+    """Проверка строки на содержание чисел"""
+    
+    try:
+        int(s)
+        return True
+    except:
+        return False
+
+
+
+
+
+
+def logpar(st):
     """Разбор строки лога"""
 
     data = {}
-    st = log.split(",")
-    duration_str = st[1].split(":")
-    h = int(duration_str[0],10)
-    m = int(duration_str[1],10)
-    s = int(duration_str[2],10)
+    duration = int(st[2],10) if isInt(st[2]) else 0
+    data["duration"] = 0 if duration < 6 else duration # Длительность вызова в секундах
 
-    sec = datetime.timedelta(hours=h, minutes=m, seconds=s)
-    
-    data["call_a"] = st[3]
-    data["call_b"] = st[6]
-    data["call_c"] = st[5]
-    data["duration"] = int(sec.total_seconds())
-    data["in_out"] = True if st[4] == "I" else False
-    data["inner"] = True if st[8] == "1" else False
+    data["call_a"] = (st[3])[2:] if len(st[3]) == 6 else st[3]
+    data["call_b"] = ""
+    data["call_c"] = (st[4])[2:] if len(st[4]) == 6 else st[4]
+    data["in_out"] = True if data["call_c"] in conf.g700  else False
+    data["inner"] = True if len(data["call_a"]) == 4 and len(data["call_c"]) else False
 
     return data
 
@@ -48,8 +57,10 @@ while True:
         day = dt.day
         month = dt.month
         year = dt.year
-        d = logpar(line)
+        st = line.split()
+        if len(st) == 5:
+            d = logpar(st)
 
-        session.execute("""INSERT INTO statwork.phone_log (id,source,datetime_call,year,month,day,call_a,call_b,call_c,duration,call_inner,in_out)
-            VALUES(UUID(),%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) USING TTL 31536000;""",
-            (conf.pref,dt,year,month,day,d["call_a"],"",d["call_c"],d["duration"],d["inner"],d["in_out"]))
+            session.execute("""INSERT INTO statwork.phone_log (id,source,datetime_call,year,month,day,call_a,call_b,call_c,duration,call_inner,in_out)
+                VALUES(UUID(),%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) USING TTL 31536000;""",
+                (conf.pref,dt,year,month,day,d["call_a"],"",d["call_c"],d["duration"],d["inner"],d["in_out"]))
