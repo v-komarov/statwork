@@ -59,16 +59,17 @@ for g in conf.groups:
             df3 = df2.loc[df2["duration"] != 0]
             calls_in_ok = df3["call_c"].count() # Входящих принятых
             talk_in_avg = 0 if calls_in_ok == 0 else int(df3["duration"].mean()) # Средняя продолжительность разговора в сек
-            calls_in_per = 0 if calls_in == 0 else calls_in_ok // calls_in * 100 # Проент принятых
+            calls_in_per = 0 if calls_in == 0 else int(calls_in_ok / calls_in * 100) # Проент принятых
 
             df2 = df1.loc[df1["in_out"] == False]
             calls_out = df2["call_a"].count() # Всего исходящих
             df3 = df2.loc[df2["duration"] != 0]
             calls_out_ok = df3["call_a"].count() # Исходящих принятых
             talk_out_avg = 0 if calls_out_ok == 0 else int(df3["duration"].mean()) # Средняя продолжительность разговора в сек
-            calls_out_per = 0 if calls_out == 0 else calls_out_ok // calls_out * 100 # Проент принятых
+            calls_out_per = 0 if calls_out == 0 else int(calls_out_ok / calls_out * 100) # Проент принятых
 
+            print(calls_out_ok,calls_out,calls_out_per)
 
-            session.execute("""INSERT INTO statwork.phone_report (id,phone,group,city,calls,calls_in,calls_out,calls_in_ok,calls_out_ok,talk_in_avg,talk_out_avg,calls_in_per,calls_out_per, mode,day,month,year) 
-                VALUES(UUID(),%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) USING TTL 2592000;""", 
-                (t, group_id, city, calls, calls_in, calls_out, calls_in_ok, calls_out_ok, talk_in_avg, talk_out_avg, calls_in_per, calls_out_per, mode, dt.day, dt.month, dt.year))
+            #session.execute("""INSERT INTO statwork.phone_report (id,phone,group,city,calls,calls_in,calls_out,calls_in_ok,calls_out_ok,talk_in_avg,talk_out_avg,calls_in_per,calls_out_per, mode,day,month,year) 
+            #    VALUES(UUID(),%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) USING TTL 2592000;""", 
+            #    (t, group_id, city, calls, calls_in, calls_out, calls_in_ok, calls_out_ok, talk_in_avg, talk_out_avg, calls_in_per, calls_out_per, mode, dt.day, dt.month, dt.year))
