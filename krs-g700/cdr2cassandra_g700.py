@@ -41,7 +41,7 @@ def logpar(st):
     data["call_b"] = ""
     data["call_c"] = (st[4])[2:] if len(st[4]) == 6 else st[4]
     data["in_out"] = True if data["call_c"] in conf.g700  else False
-    data["inner"] = True if len(data["call_a"]) == 4 and len(data["call_c"]) else False
+    data["inner"] = True if len(data["call_a"]) == 4 and len(data["call_c"]) == 4 else False
 
     return data
 
