@@ -51,7 +51,7 @@ for g in conf.groups:
 
         for t in p["phones"]:
             """По номерам телефонов"""
-            df1 = df.loc[ ((df["call_a"] == t) & (df["source"]==source)) | (df["call_c"] == t)]
+            df1 = df.loc[ ((df["call_a"] == t) & (df["source"]==source)) | ((df["call_c"] == t) & (df["source"]==source)) ]
             calls = df1["source"].count() # Всего звонков по текущему номеру
 
             df2 = df1.loc[df1["in_out"] == True]
