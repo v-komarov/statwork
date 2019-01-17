@@ -1,0 +1,14 @@
+[Unit]
+Description=Screen ast2cass
+After=network.target
+
+[Service]
+Type=forking
+User=root
+ExecStart=/usr/bin/screen -dmS ast2cass /srv/statwork/asterisk2cassandra.sh
+ExecStop=/usr/bin/screen -S ast2cass -X quit
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+service cdrlog
+{
+    disable = no
+    type = UNLISTED
+    socket_type = stream
+    port = 44444
+    wait = no
+    user = root
+    server = /bin/sh
+    server_args = /srv/cdrlog.sh
+}

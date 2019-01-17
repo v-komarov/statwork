@@ -1,0 +1,14 @@
+[Unit]
+Description=Screen ava2cass
+After=network.target
+
+[Service]
+Type=forking
+User=root
+ExecStart=/usr/bin/screen -dmS ava2cass /srv/statwork/avaya2cassandra.sh
+ExecStop=/usr/bin/screen -S ava2cass -X quit
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target

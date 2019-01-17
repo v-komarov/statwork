@@ -9,3 +9,5 @@ ca_keyspace = "statwork"
 """Префикс"""
 pref = "IRK-ASTERISK"
 
+pref_uu = "UU-ASTERISK"
+

@@ -5,9 +5,8 @@ service cdr2cassandra
     socket_type = stream
     port = 11111
     wait = no
-    instances = 1
     user = root
     server = /usr/bin/python3.6
-    server_args = /srv/cdr2cassandra_asterisk.py
+    server_args = /srv/statwork/g700/cdr2cassandra_g700.py
 }
 
