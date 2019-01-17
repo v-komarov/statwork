@@ -6,5 +6,6 @@
 - **cdr2cassandra_asterisk** - конфиг сервера загрузки CDR
 - **cdr2cassandra_asterisk.py** - реализация сервиса xinetd для загрузки CDR
 - **test_service.sh** - скрипт тестирования сервиса данными
- 
+- **cdr2cassandra_definity** - конфиг сервиса загрузки CDR
+- **cdr2cassandra_definity.py** - реализация сервиса xinetd для загрузки CDR
  
