@@ -20,7 +20,7 @@ groups = (
             { "source": "CHI-DEFINITY", "phones":("1515",), "city":"ЧИТА"}
         ),
 
-#    },
+    },
     {"group": 2, "comment":"Ludmila Kuricyna",
         "phones": (
             { "source": "KRS-ASTERISK", "phones":(), "city":"КРАСНОЯРСК"},
