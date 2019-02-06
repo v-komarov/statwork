@@ -8,4 +8,5 @@ ca_keyspace = "statwork"
 
 """Префикс"""
 pref = "CHI-ASTERISK"
+pref2 = "CHI-DEFINITY"
 

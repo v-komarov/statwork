@@ -51,7 +51,7 @@ for g in conf.groups:
 
         for t in p["phones"]:
             """По номерам телефонов"""
-            df1 = df.loc[ ((df["call_a"] == t) & (df["source"]==source)) | (df["call_c"] == t)]
+            df1 = df.loc[ ((df["call_a"] == t) & (df["source"]==source)) | ((df["call_c"] == t) & (df["source"]==source)) ]
             calls = df1["source"].count() # Всего звонков по текущему номеру
 
             df2 = df1.loc[df1["in_out"] == True]
@@ -67,6 +67,7 @@ for g in conf.groups:
             calls_out_ok = df3["call_a"].count() # Исходящих принятых
             talk_out_avg = 0 if calls_out_ok == 0 else int(df3["duration"].mean()) # Средняя продолжительность разговора в сек
             calls_out_per = 0 if calls_out == 0 else int(calls_out_ok / calls_out * 100) # Проент принятых
+
 
             session.execute("""INSERT INTO statwork.phone_report (id,phone,group,city,calls,calls_in,calls_out,calls_in_ok,calls_out_ok,talk_in_avg,talk_out_avg,calls_in_per,calls_out_per, mode,day,month,year) 
                 VALUES(UUID(),%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) USING TTL 2592000;""", 
