@@ -9,3 +9,5 @@
 - **cdrloguu.txt** - тестовые данные (asterisk Улан-Удэ)
 - **cdr2cassandra_asterisk_uu** - конфиг сервера загрузки CDR (asterisk Улан-Удэ)
 - **cdr2cassandra_asterisk_uu.py** - реализация сервиса xinetd для загрузки CDR (asterisk Улан-Удэ)
+- **cdr2cassandra_asterisk_ang** - конфиг сервера загрузки CDR (asterisk Ангарска)
+- **cdr2cassandra_asterisk_ang.py** - реализация сервиса xinetd для загрузки CDR (asterisk Ангарска)
