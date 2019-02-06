@@ -12,3 +12,6 @@ pref = "IRK-ASTERISK"
 pref_uu = "UU-ASTERISK"
 
 pref_ang = "ANG-ASTERISK"
+
+pref_zhi = "ZHI-ASTERISK"
+

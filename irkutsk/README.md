@@ -11,3 +11,5 @@
 - **cdr2cassandra_asterisk_uu.py** - реализация сервиса xinetd для загрузки CDR (asterisk Улан-Удэ)
 - **cdr2cassandra_asterisk_ang** - конфиг сервера загрузки CDR (asterisk Ангарска)
 - **cdr2cassandra_asterisk_ang.py** - реализация сервиса xinetd для загрузки CDR (asterisk Ангарска)
+- **cdr2cassandra_asterisk_zhi** - конфиг сервера загрузки CDR (asterisk Железногорск-Илимский)
+- **cdr2cassandra_asterisk_zhi.py** - реализация сервиса xinetd для загрузки CDR (asterisk Железногорск-Илимский)
