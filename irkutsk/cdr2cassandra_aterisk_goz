@@ -8,6 +8,6 @@ service cdr2cassandra
     instances = 1
     user = root
     server = /usr/bin/python3.6
-    server_args = /srv/cdr2cassandra_asterisk_sba.py
+    server_args = /srv/cdr2cassandra_asterisk_goz.py
 }
 
