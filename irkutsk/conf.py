@@ -15,3 +15,6 @@ pref_ang = "ANG-ASTERISK"
 
 pref_zhi = "ZHI-ASTERISK"
 
+pref_sba = "SBA-ASTERISK"
+
+pref_goz = "GOZ-ASTERISK"
