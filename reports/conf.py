@@ -35,6 +35,8 @@ groups = (
             { "source": "KRS-AVAYA", "phones":("4726","4730"), "city":"ЛЕСОСИБИРСК"},
             { "source": "IRK-ASTERISK", "phones":("1624","1625","1543","1626","1622"), "city":"ИРКУТСК"},
             { "source": "IRK-ASTERISK", "phones":("5402","5401"), "city":"УСОЛЬЕ-СИБИРСКОЕ"},
+            { "source": "ANG-ASTERISK", "phones":("3502","3504"), "city":"АНГАРСК"},
+            { "source": "ZHI-ASTERISK", "phones":("5840",), "city":"ЖЕЛЕЗНОГОРСК-ИЛИМСКИЙ"},
             { "source": "UU-ASTERISK", "phones":("5113","5115","5112"), "city":"УЛАН-УДЭ"},
             { "source": "CHI-ASTERISK", "phones":("4405","4402","4411","4555","4408","4403","4420"), "city":"ЧИТА"},
             { "source": "CHI-ASTERISK", "phones":("4122",), "city":"КРАСНОКАМЕНСК"},
