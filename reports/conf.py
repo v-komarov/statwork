@@ -44,6 +44,8 @@ groups = (
             { "source": "CHI-ASTERISK", "phones":("4103",), "city":"ЯСНОГОРСК"},
             { "source": "CHI-ASTERISK", "phones":("4098",), "city":"СВОБОДНЫЙ"},
             { "source": "CHI-ASTERISK", "phones":("4157",), "city":"БЛАГОВЕЩЕНСК"},
+            { "source": "SBA-ASTERISK", "phones":("5851",), "city":"СЕВЕРОБАЙКАЛЬСК"},
+            { "source": "GOZ-ASTERISK", "phones":("5871",), "city":"ГУСИНООЗЕРСК"},
             { "source": "CHI-DEFINITY", "phones":(), "city":"ЧИТА"}
         ),
 
