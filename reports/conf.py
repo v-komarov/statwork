@@ -50,6 +50,12 @@ groups = (
         ),
 
     },
+    {"group": 3, "comment":"Olga Malikova",
+        "phones": (
+            { "source": "IRK-ASTERISK", "phones":("1621","1542"), "city":"ИРКУТСК"},
+        ),
+
+    },
 
 )
 
