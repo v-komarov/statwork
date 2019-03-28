@@ -14,3 +14,7 @@ pip install cassandra-driver
 - **statwork.ddl** - скрипт создания структуры хранения cassandra
 - **table.ddl** - отдельно создание таблицы
 - **index.ddl** - отдельно создание индексов
+
+**Пример отчета**
+
+![Пример отчеьта](image.png)
