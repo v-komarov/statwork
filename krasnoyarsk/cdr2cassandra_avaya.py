@@ -52,7 +52,7 @@ for m in consumer:
     cdr = m.value
     print cdr
 
-    nc.write((cdr+'\n').encode("utf-8"))
+    nc.write(cdr+'\n')
 
 
     d = logpar(cdr)
