@@ -18,3 +18,7 @@ ka_queue = "avaya"
 ka_queue2 = "asterisk"
 
 
+"""flume"""
+flume_krsk_asterisk = {'host':'10.6.0.12','port':11126}
+flume_krsk_avaya = {'host':'10.6.0.12','port':11124}
+

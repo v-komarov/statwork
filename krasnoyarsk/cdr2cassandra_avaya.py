@@ -3,6 +3,8 @@
 import datetime
 from cassandra.cluster import Cluster
 from kafka import KafkaConsumer,TopicPartition
+from netcat import Netcat
+
 
 
 import conf
@@ -12,6 +14,7 @@ cluster = Cluster(conf.ca_host,conf.ca_port)
 session = cluster.connect()
 session.set_keyspace(conf.ca_keyspace)
 
+nc = Netcat(conf.flume_krsk_avaya['host'],conf.flume_krsk_avaya['port'])
 
 
 
@@ -48,6 +51,9 @@ for m in consumer:
 
     cdr = m.value
     print cdr
+
+    nc.write((cdr+'\n').encode("utf-8"))
+
 
     d = logpar(cdr)
 

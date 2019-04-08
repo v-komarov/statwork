@@ -58,7 +58,7 @@ while True:
     else:
 
         ## Отправка в flume
-        #nc.write("{}\n".format(line))
+        nc.write((line+'\n').encode("utf-8"))
 
         dt = datetime.datetime.now() + h4
         day = dt.day
