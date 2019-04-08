@@ -5,6 +5,8 @@ ca_host = ["10.6.0.165",]
 ca_port = 9042
 ca_keyspace = "statwork"
 
+flume_krsk_g700 = {'host':'10.6.0.12','port':11122}
+
 
 """Собственные номера G700"""
 g700 = (
