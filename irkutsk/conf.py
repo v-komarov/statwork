@@ -18,3 +18,9 @@ pref_zhi = "ZHI-ASTERISK"
 pref_sba = "SBA-ASTERISK"
 
 pref_goz = "GOZ-ASTERISK"
+
+
+"""flume"""
+flume_irk_asterisk = {'host':'10.6.0.12','port':11161}
+flume_uu_asterisk = {'host':'10.6.0.12','port':11162}
+

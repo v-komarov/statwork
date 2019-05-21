@@ -3,12 +3,20 @@ import time
 import sys
 from cassandra.cluster import Cluster
 
+
+from netcat import Netcat
+
+
 import conf
 
 
 cluster = Cluster(conf.ca_host,conf.ca_port)
 session = cluster.connect()
 session.set_keyspace(conf.ca_keyspace)
+
+
+nc = Netcat(conf.flume_irk_asterisk['host'],conf.flume_irk_asterisk['port'])
+
 
 h4 = datetime.timedelta(hours=4)
 
@@ -39,6 +47,12 @@ while True:
     if line == "":
         break
     else:
+    
+    
+        ### Отправка в flume
+        nc.write((line+'\n').encode("utf-8"))
+    
+    
         dt = datetime.datetime.now() + h4
         day = dt.day
         month = dt.month
