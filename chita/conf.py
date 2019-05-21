@@ -10,3 +10,8 @@ ca_keyspace = "statwork"
 pref = "CHI-ASTERISK"
 pref2 = "CHI-DEFINITY"
 
+
+"""flume"""
+flume_chi_asterisk = {'host':'10.6.0.12','port':11132}
+flume_chi_definity = {'host':'10.6.0.12','port':11134}
+
